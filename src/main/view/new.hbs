@@ -1,0 +1,53 @@
+<div class="container">
+    <br>
+    <div style="display: flex; flex-director: row; justify-content: space-between">
+        <h2>Add New Books</h2>
+        <a href="/" class="btn btn-secondary">Back Home</a>
+    </div>
+    <br>
+    <form class="g-3" method="post" action="">
+        <div class="col-4">
+            <label for="validationDefault01" class="form-label">ID</label>
+            <input type="number" class="form-control" name="id" id="validationDefault01" required>
+        </div>
+        <div class="col-4">
+            <label for="validationDefault01" class="form-label">Title</label>
+            <input type="text" class="form-control" name="title" id="validationDefault01" required>
+        </div>
+        <div class="col-4">
+            <label for="validationDefault02" class="form-label">Author</label>
+            <input type="text" class="form-control" name="author" id="validationDefault02" required>
+        </div>
+        {{!-- <div class="col-md-4">
+            <label for="validationDefaultUsername" class="form-label">Type</label>
+            <input type="text" class="form-control" id="validationDefault02" value="" required>
+        </div> --}}
+        <br>
+        <div class="col-12">
+            <div class="form-check">
+                <input class="form-check-input" name="approve" type="checkbox">
+                <label class="form-check-label" for="invalidCheck2">
+                    Approved
+                </label>
+            </div>
+        </div>
+        <br>
+        <div class="col-12">
+            {{!-- <button type="submit" class="btn btn-primary" id="liveToastBtn">Submit form</button> --}}
+            <button class="btn btn-primary" type="submit">Submit form</button>
+        </div>
+        <br>
+        {{#if newConfig.isSuccess}}
+        <div class="alert alert-success" role="alert">
+            Insert success!
+        </div>
+        {{else}}
+        {{#with newConfig}}
+        <div class="alert alert-danger" role="alert">
+            ERROR!!! {{errMsg}}
+        </div>
+        {{/with}}
+        {{/if}}
+    </form>
+
+</div>

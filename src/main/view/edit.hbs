@@ -1,0 +1,49 @@
+<div class="container">
+  <br>
+  <div style="display: flex; flex-director: row; justify-content: space-between">
+    <h2>Edit Book</h2>
+    <a href="/" class="btn btn-secondary">Back Home</a>
+  </div>
+  <br>
+  {{#with book}}
+  <form class="g-3" method="post" action="">
+    <div class="col-4">
+      <label for="disabledTextInput" class="form-label">ID</label>
+      <input type="number" class="form-control" name="id" id="disabledTextInput" value="{{id}}" readonly="true">
+    </div>
+    <div class="col-4">
+      <label for="validationDefault01" class="form-label">Title</label>
+      <input type="text" class="form-control" name="title" id="validationDefault01" placeholder="{{title}}" required>
+    </div>
+    <div class="col-4">
+      <label for="validationDefault02" class="form-label">Author</label>
+      <input type="text" class="form-control" name="author" id="validationDefault02" placeholder="{{author}}" required>
+    </div>
+    {{!-- <div class="col-md-4">
+      <label for="validationDefaultUsername" class="form-label">Type</label>
+      <input type="text" class="form-control" id="validationDefault02" value="" required>
+    </div> --}}
+    <br>
+    <div class="col-12">
+      <div class="form-check">
+        <input class="form-check-input" name="approve" type="checkbox" {{#if approved}} checked
+          {{/if}}>
+        <label class="form-check-label" for="invalidCheck2">
+          Approved
+        </label>
+      </div>
+    </div>
+    <br>
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">Submit form</button>
+    </div>
+    {{!-- {{#if newConfig.isSuccess}}
+    <p>Insert success!</p>
+    {{else}}
+    {{#with newConfig}}
+    <p>ERROR!!! <b>{{errMsg}}</b></p>
+    {{/with}}
+    {{/if}} --}}
+  </form>
+  {{/with}}
+</div>
